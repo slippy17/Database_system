@@ -1,0 +1,7 @@
+TCL Transaction control language    Commit, Roll-back, savepoint
+
+DDL Data                            Create tables, DROP tables, views and other objects.
+
+DML Data manipulation language      Delete, insert, update
+
+DCL Data control language            Grant, Revoke, 

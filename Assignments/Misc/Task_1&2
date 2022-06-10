@@ -1,0 +1,44 @@
+
+Task 1
+Create a conceptual data model to represent the data requirements of the Help
+Desk scenario. Your model should include an E-R diagram and entity headings
+(listing the attributes associated with entity types). List any assumptions you
+have made.
+
+
+Task 2 – Relational Schema (20%)
+Using your conceptual data model, develop a relational schema consisting of the
+definitions of the domains and relations that represent the entity and relationship
+types, including primary keys, foreign keys and any constraints.
+
+
+Task 3: Database Implementation (10%)
+Use your design to implement the Help Desk database using Oracle DBMS. You
+should use SQL statements to create tables, insert data and queries to provide
+the following functionality: (Every SQL including the CREATE and INSERT
+statements, must be documented and saved using notepad or MS Word)
+
+
+Task 4 – Database Test (20%)
+Test your database by answering the following questions. You must document
+the SQL statement for each question:
+Select Queries
+1. List the details of equipment and associated software.
+2. Produce a list of experts (support staff) for a given problem area
+3. Produce a list of all unresolved problems with the assigned Specialist
+4. Produce a list of problems reported by a member of staff, the details of
+the support staff who attended the problem and the solution provided by
+the support staff
+5. Find (display) the average time taken fix fault for a given problem area.
+6. Display a list of the most common problems and order them in according
+to the frequency of their occurrence.
+7. Display the equipment with the most reported problems showing
+problem details
+8. Produce a list of problems that have been solved by helpdesk operator
+Update and Delete Queries
+9. Add a new Specialist to the database
+10. Assign a specialist for a given problem (it must be an unresolved,
+unassigned and should find a matching Specialist)
+11. Update the Call-log with appropriate details when the problem has been
+resolved.12. An item of Equipment which, has previously had a fault reported, has
+now become redundant so Delete it from the database.

@@ -1,0 +1,35 @@
+INSERT INTO Employee_reg
+VALUES
+'Shawna',	    'Buck',	        'shawna.buck@gmail.com',	    '702-771-7149',	'Sales',	'TEC1';
+
+
+'Nathaniel',	'Burke'	,       nathaniel.burke@walmart.com	    231-765-6923	Tech Support	TEC3
+'Elisabeth',	'Foster',	    elisabeth.foster@gmail.com	    270-749-4774	Customer Support	TEC1
+'Briana',	    'Lancaster',	briana.lancaster@yahoo.com	    219-623-8216	Accounting	CLK
+'Estella',	    'Potter',       estella.potter@gmail.com	    907-677-8486	Admin	MAN
+'Lamont',	    'woods',	    lamont.woods@hotmail.com	    236-597-8196	Sales	MAN
+'Melinda',	    'Lopez'	,       melinda.lopez@hotmail.com	    210-396-1493	Accounting	CLK
+'Shanna',       'Silva',	    shanna.silva@gmail.com	        236-373-6712	Accounting	CLK
+'Jasmine',	    'Freeman',	    jasmine.freeman@gmail.com	    423-796-1535	Accounting	SUP
+'Madge',	    'Sargent',	    m.sargent@aol.com	            630-910-0644	Sales	ENG
+'Reid',	        'Randolph',     reid.randolph@gmail.com	        209-996-8902	Sales	TEC2
+'Antoine',	    'Wiley'	,       antoine.wiley@verizon.net	    503-361-6334	Sales	TEC2
+'Mathew',	    'Hodge',        mathew.hodge@hotmail.com	    209-294-7430	Sales	ENG
+'Bernardo',	    'Austin',	    bernardo.austin@hotmail.com	    319-716-4227	Sales	MAN
+'Cole',	        'Jensen	' ,     cole.jensen@aol.com	            405-495-4201	Sales	TEC1
+'Tonia',        'Burns	' ,     tonia.burns@gmail.com	        209-631-5424	Sales	TEC1
+'Tod',	        'Holcomb',	    tod.holcomb@outlook.com	        240-364-4220	Customer Support	MAN
+'Yesenia',	    'Guerrero',	    yesenia.guerrero@btinternet.com	240-505-5321	Customer Support	ENG
+'Carey',	    'Ferrell',	    carey.ferrell@yahoo.com	        212-495-4523	Customer Support	ENG
+'Aileen',	    'Blanchard',	aileen.blanchard@gmail.com	    308-788-3843	Customer Support	ENG
+'Marta',	    'Cervantes',	marta.cervantes@gmail.com	    206-858-9176	Customer Support	CLK
+'Arthur',	    'Holloway',	    arthur.holloway@aol.com	        225-832-0451	Customer Support	TEC3
+'Tara',	        'Forbes',	    tara.forbes@gmail.com	        319-249-4281	Customer Support	TEC2
+'Josef',	    'Griffin',	    josef.griffin@yahoo.com	        209-441-9130	Tech Support	MAN
+'Keri',	        'Slater',       keri.slater@apple.com	        207-842-2965	Tech Support	OPR
+'Desmond',	    'Wynn',         desmond.wynn@hotmail.com	    209-319-3405	Tech Support	OPR
+'Adrienne',	    'Puckett',	    adrienne.puckett@verizon.net	209-235-0390	Tech Support	OPR
+'Beatriz',	    'Knowles'	    beatriz.knowles@gmail.com	    406-923-1326	Tech Support	SUP
+'Jermaine',	    'Sykes',        jermaine.sykes@apple.com	    239-204-8747	Tech Support	CLV
+'Scott',        'Best',	        scott.best@cox.net	            307-504-4165	Accounting	CLV
+

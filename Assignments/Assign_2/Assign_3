@@ -1,0 +1,119 @@
+
+Safeguard the data    
+
+As a database administrator, you are responsible for the security, availability and integrity of the data.  But different kinds of threats and unavoidable failure can cause unauthorized access and corrupt the data.
+
+“Data is a valuable resource that must be strictly controlled and managed, as must any corporate resource. Part or all of the corporate data may have strategic importance to an organization and should, therefore, be kept secure and confidential.” 
+[1]
+
+What is database security and why it is important?
+    The protection of the database against unauthorised access, either intentional or accidental.
+
+Oracle 
+System priveleges
+Login for database access. 
+Has user username + password? Is there permission ato access?
+What system privileges, CREATE Tables?, Can the user pass these sys privileges to other users? i.e. Admin 
+
+Object privileges
+SELECT, INSERT, UPDATE, DELETE, REFERENCES, ALL
+
+
+What are the common security threats?
+     Threat, risk assesment form containing  likelyhood and impact.
+     e.g.   Hardware, Part fail, power surge/loss, thieft, weather (earthquake, storm, flooding), Fire.
+            Software, SQL Inject, Malware, Program alteration, Theft, end of support.
+            Admin,    Inadequate security policies, Excessive privileges.
+            Networks, Wire / WiFI scanning, infrastructure fail.
+            Database, Unauthorised access, Theft of data, data corruption.
+            Users,    sharing logins, virsuses, Unauthorised access.
+            Operators. Trapdoors, need training,   
+
+     for the Help Desk database,  Callers, Users, Specialist, Managers, IT, Office Admin.
+
+     Security is everyones responsible.
+
+What countermeasures are available and how to implement them?
+Authorization -     Access controls.
+Authentication -    Loging username + password. 2 factor authenticaion to OS through phone (pin) or email.
+                    Microsoft 'Passport' for Win 10 and Apple support OS, 
+                    User and role based privileges.
+
+Integrity -     Constratinst on data being inserted into tables. i.e. nulls,  datatypes,  PK for every FK and num chars.
+                Sanitation of data
+                Transaction consistancy -  Livelock + Starvation 
+
+
+Views           Used to restrict access both user access to a view and restricted column view of table
+
+Encryption      DES / RSA Asymmetric https://www.cloudflare.com/learning/ssl/what-is-asymmetric-encryption/
+
+
+Back-up and recovery
+                Address threats see previous.
+Failure types;
+Program fail (syntax fail, aborts transaction), incorrect data, instance fail (OS disk defrag, memory, power), Media (Hard disk etc). Give example of database user defragmenting hard disk causing corruption.
+
+                (Journaling)Back-up of log files. These will help to rebuild database in event of failure.
+                Regularly scheduled back-ups. 
+                Regularly offline check of back-ups.
+RAID        _ Oracle recommends Database redo logs RAID 1. Database files RAID 1 OR RAIS 0+1
+                Chen and patterson (1990), Chen et al (1994)
+
+What are 
+
+differential files, 
+shadow paging, 
+mirroring, 
+fallback.
+
+
+
+Diaster recovery- Cold, Warm and Hot sites.
+
+
+Offline diagnostic server. 
+
+
+What implications are there if relevant countermeasures are not applied on time?
+What is the role of modern technologies and application in database security?
+What are the DBMS specific access control mechanisms?
+What is the role of a DBA in ensuring database security? 
+
+
+
+External Sites and Papers: (Database Security)
+
+    https://www.ibm.com/cloud/learn/database-security (Links to an external site.)
+    https://blogs.oracle.com/cloudsecurity/how-much-database-security-is-enough-know-where-to-start (Links to an external site.)
+    Impact of SQL Injection in Database Security (IEEE) (Links to an external site.)
+    Research on SQL Injection Attack and Prevention Technology Based on Web (IEEE) (Links to an external site.)
+    Study on Data Security Policy Based On Cloud Storage (IEEE) (Links to an external site.)
+    Data Access Security in Cloud Computing (IEEE) (Links to an external site.)
+    Investigate, find and read similar research papers
+
+Mention;
+        
+    2 factor security auth
+    Oracle security manager
+    Oracle priviliges ansysytem privelages
+    Disctretionary access control
+    Mandatory Access Control
+
+
+    Mention Polyinstantiation
+    Implict and explict commits
+    ACID - Atomicty, Consistency, Isolation + Durability.
+
+
+
+    Transaction consistancy -  Livelock + Starvation 
+
+
+
+
+
+
+
+
+[1]  T.M, Connolly; C.E, Begg, Database Systems - A Practical Approach to Design Implementation and Management, Pearson Education, 2015.

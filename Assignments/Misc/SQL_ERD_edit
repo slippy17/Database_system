@@ -1,0 +1,164 @@
+
+-- Drop tables
+DROP TABLE Job_Codes;
+DROP TABLE Employee_Reg; 
+DROP TABLE Equipment_Owners; 
+DROP TABLE Callers;
+DROP TABLE Resolution_Codes;
+DROP TABLE Problem_Category_Codes; 
+
+DROP TABLE Specialist_Category_Codes; 
+DROP TABLE HD_Specialists;
+DROP TABLE HD_Operators;
+DROP TABLE SN_Lookup;
+DROP TABLE Equipment_Reg;
+DROP TABLE Call_Details CASCADE CONSTRAINTS;
+
+-- create tables in order.
+ 
+CREATE TABLE  Job_Codes  
+(
+   Job_Code  Varchar(8),
+   Job_Title  Varchar(64),
+   Job_Description  Varchar(64),
+  PRIMARY KEY ( Job_Code )
+);
+-- checked
+
+
+CREATE  TABLE  Employee_Reg  
+(
+   Employee_ID  NUMBER(8),
+   First_Name  Varchar(15),
+   Last_Name  Varchar(15),
+   Email  Varchar(64),
+   Phone  Varchar(15),
+   Department  Varchar(8),
+   Job_Code  Varchar(8) CONSTRAINT Employee_Reg_FK_Job_Codes REFERENCES Job_Codes (Job_Code),
+  PRIMARY KEY ( Employee_ID ));
+-- checked
+
+
+CREATE TABLE  Equipment_Owners  
+(
+   Reg_Owner_ID  NUMBER(8),
+   Employee_ID  NUMBER(8) CONSTRAINT Equipment_Owners_FK_Employee_Reg REFERENCES Employee_Reg (Employee_ID),
+  PRIMARY KEY ( Reg_Owner_ID )
+
+);
+-- checked
+
+
+CREATE TABLE  Callers  
+(
+   Caller_ID  NUMBER(8),
+   Employee_ID  NUMBER(8) CONSTRAINT Callers_FK_Employee_Reg REFERENCES Employee_Reg (Employee_ID),
+  PRIMARY KEY ( Caller_ID )
+);
+-- checked
+
+CREATE TABLE  Resolution_Codes  
+(
+   Resolution_Code  Varchar(6),
+   Resolution_Description  Varchar(256),
+  PRIMARY KEY ( Resolution_Code )
+);
+-- checked
+
+CREATE TABLE  Problem_Category_Codes  
+(
+   Problem_Type_ID  Varchar(6),
+   Problem_Description  Varchar(255),
+  PRIMARY KEY ( Problem_Type_ID )
+);
+-- checked
+
+CREATE TABLE  Specialist_Category_Codes  
+(
+   Specialist_Area_Code  Varchar(6),
+   Cat_Description  Varchar(30),
+  PRIMARY KEY ( Specialist_Area_Code )
+);
+-- checked
+
+CREATE TABLE  HD_Specialists  
+(
+   HD_Specialist_ID  NUMBER(6),
+   Employee_ID  NUMBER(8),
+   Specialist_Area_Code  Varchar(6) CONSTRAINT HD_Specialists_FK_Specialist_Category_Codes REFERENCES Specialist_Category_Codes (Specialist_Area_Code),
+  PRIMARY KEY ( HD_Specialist_ID )
+);
+-- checked
+
+
+CREATE TABLE  HD_Operators  (
+   HD_Operator_ID  Varchar(6),
+   Employee_ID  NUMBER(8) CONSTRAINT HD_Operators_FK_Employee_Reg REFERENCES Employee_Reg (Employee_ID),
+  PRIMARY KEY ( HD_Operator_ID )
+);
+-- checked
+
+
+CREATE TABLE  SN_Lookup  
+-- Foreign key Equip_ID not defined until after Equipment_Reg table created.
+(
+   Computer_SN  Varchar(30),
+   Equip_ID  NUMBER(8),
+  PRIMARY KEY ( Computer_SN )
+);
+-- checked
+
+
+CREATE TABLE  Equipment_Reg  
+-- Foreign key Call_ID not defined until after Call_details table created.
+(
+   Equip_ID  NUMBER(8),
+   Computer_SN  Varchar(30) CONSTRAINT Equipment_Reg_FK_SN_Lookup REFERENCES SN_Lookup (Computer_SN),
+   Caller_ID  NUMBER(8) CONSTRAINT Equipment_Reg_FK_Callers REFERENCES Callers (Caller_ID),
+   Equip_Make  Varchar(15),
+   Equip_Type  Varchar(8),
+   Equip_OS  Varchar(8),
+   Equip_Lic  Varchar(64),
+   Equip_Lic_Expire_Date  Date,
+   Computer_SW  Varchar(64),
+   Call_ID  NUMBER(8),
+   Reg_Owner_ID  NUMBER(8) CONSTRAINT Equipment_Reg_FK_Equipment_Owners REFERENCES Equipment_Owners (Reg_Owner_ID),
+  PRIMARY KEY ( Equip_ID )
+);
+-- checked
+
+
+CREATE TABLE  Call_Details  
+(
+   Call_ID  NUMBER(8),
+   Caller_Name  Varchar(15),
+   Caller_ID  NUMBER(8) CONSTRAINT Call_Details_FK_Callers REFERENCES Callers (Caller_ID),
+   Computer_SN  Varchar(30) CONSTRAINT Call_Details_FK_SN_Lookup REFERENCES SN_Lookup (Computer_SN),
+   HD_Operator_ID  Varchar(6) CONSTRAINT Call_Details_FK_HD_Operators REFERENCES HD_Operators (HD_Operator_ID),
+   Call_Open_Time  Timestamp(2),
+   Call_Closed_Time  Timestamp(2),
+   Comments  Varchar(2000),
+   HD_Specialist_ID  Number(6) CONSTRAINT Call_Details_FK_HD_Specialists REFERENCES HD_Specialists (HD_Specialist_ID),
+   Call_Active  Number(1),
+   Problem_Type_ID  Varchar(6)CONSTRAINT Call_Details_FK_Problem_Category_Codes REFERENCES Problem_Category_Codes (Problem_Type_ID),
+   Resolution_Code  Varchar(6) CONSTRAINT Call_Details_FK_Resolution_Codes REFERENCES Resolution_Codes (Resolution_Code),
+  PRIMARY KEY ( Call_ID )
+);
+
+
+-- set foreign keys that were not set during create tables
+-- add and check other constraints 
+
+-- insert data
+
+
+
+
+
+
+
+
+
+
+
+

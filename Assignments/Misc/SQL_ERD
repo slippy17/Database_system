@@ -1,0 +1,99 @@
+CREATE TABLE "Equipment_Owners" (
+  "Reg_Owner_ID" Int,
+  "Employee_ID" Int,
+  PRIMARY KEY ("Reg_Owner_ID")
+);
+
+CREATE TABLE "Resolution_Codes" (
+  "Resolution_Code" Varchar,
+  "Resolution_Description" Varchar,
+  PRIMARY KEY ("Resolution_Code")
+);
+
+CREATE TABLE "HD_Specialists" (
+  "HD_Specialist_ID" Int,
+  "Employee_ID" Int,
+  "Specialist_Area_Code" Varchar,
+  PRIMARY KEY ("HD_Specialist_ID")
+);
+
+CREATE TABLE "SN_Lookup" (
+  "Computer_SN" Varchar,
+  "Equip_ID" Int,
+  PRIMARY KEY ("Computer_SN")
+);
+
+CREATE TABLE "Job_Codes" (
+  "Job_Code" Varchar,
+  "Job_Title" Varchar,
+  "Job_Description" Varchar,
+  PRIMARY KEY ("Job_Code")
+);
+
+CREATE TABLE "Call_Details" (
+  "Call_ID" Int,
+  "Caller_Name" Varchar,
+  "Caller_ID" Int,
+  "Computer_SN" Varchar,
+  "HD_Operator_ID" Varchar,
+  "Call_Open_Time" Timestamp,
+  "Call_Closed_Time" Timestamp,
+  "Comments" Varchar,
+  "HD_Specialist_ID" Varchar,
+  "Call_Active" Bool,
+  "Problem_Type_ID" Varchar,
+  "Resolution_Code" Varchar,
+  PRIMARY KEY ("Call_ID")
+);
+
+CREATE TABLE "Specialist_Category_Codes" (
+  "Specialist_Area_Code" Varchar,
+  "Cat_Description" Varchar,
+  PRIMARY KEY ("Specialist_Area_Code")
+);
+
+CREATE TABLE "Callers" (
+  "Caller_ID" Int,
+  "Employee_ID" Int,
+  PRIMARY KEY ("Caller_ID")
+);
+
+CREATE TABLE "Employee_Reg" (
+  "Employee_ID" Int,
+  "First_Name" Varchar,
+  "Last_Name" Varchar,
+  "Email" Varchar,
+  "Phone" Varchar,
+  "Department" Varchar,
+  "Job_Code" Varchar,
+  PRIMARY KEY ("Employee_ID")
+);
+
+CREATE TABLE "Equipment_Reg" (
+  "Equip_ID" Int,
+  "Computer_SN" Varchar,
+  "Caller_ID" Int,
+  "Equip_Make" Varchar,
+  "Equip_Type" Varchar,
+  "Equip_OS" Varchar,
+  "Equip_Lic" Varchar,
+  "Equip_Lic_Expire_Date" Date,
+  "Computer_SW" Varchar,
+  "Call_ID" Int,
+  "Reg_Owner_ID" Int,
+  PRIMARY KEY ("Equip_ID")
+);
+
+CREATE TABLE "Problem_Category_Codes" (
+  "Problem_Type_ID" Varchar,
+  "Problem_Description" Varchar,
+  PRIMARY KEY ("Problem_Type_ID")
+);
+
+CREATE TABLE "HD_Operators" (
+  "HD_Operator_ID" Int,
+  "Employee_ID" Int,
+  PRIMARY KEY ("HD_Operator_ID")
+);
+
+
